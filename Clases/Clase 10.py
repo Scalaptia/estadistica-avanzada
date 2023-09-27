@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 26 13:17:10 2023
-
-@author: Fernando Haro Calvo
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -17,6 +10,7 @@ model = np.polyfit(x, y, 9)
 
 print("Modelo lineal", model)
 
+
 """
 Predicción utilizando poly1d()
 """
@@ -27,7 +21,7 @@ predict(x_value)
 
 """
 Exactitud del modelo R-squared
-Sse debe importar sklearn.metric import r2_score
+Se debe importar sklearn.metric import r2_score
 """
 from sklearn.metrics import r2_score
 r2 = r2_score(y, predict(x))
@@ -48,12 +42,36 @@ plt.plot(x_axis, y_axis, c = "g")
 mymodel = np.poly1d(np.polyfit(x, y, 3))
 
 print("Mi modelo", mymodel)
-predict = np.poly1d(mymodel)
+predict3 = np.poly1d(mymodel)
 
 x_value = 20
-x_20 = predict(x_value)
+x_20 = predict3(x_value)
 
 print("Valor de y para x=20 es: ", x_20)
 
-r2 = r2_score(list(x_20), x_value)
+r2_p3 = r2_score(y, predict3(x))
 print("El valor de r_square es", r2) #coeficiente de determinacion
+
+"""
+Calculo de los errores y-ypred
+"""
+
+errores = []
+for n in y:
+    errores = y - predict(x)
+    
+print("errores: ", errores)
+
+media_error = np.mean(errores)
+print("Media de los errores = ", media_error)
+
+ds_error = np.std(errores)
+print("Desviación estándar de los errores = ", ds_error)
+
+""" Histograma de los errores """
+
+plt.title("HISTOGRAMA DE LOS ERRORES")
+plt.xlabel("Articulos en promocion")
+plt.ylabel("Ventas")
+plt.hist(errores)
+plt.show()
