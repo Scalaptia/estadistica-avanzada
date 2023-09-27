@@ -6,7 +6,7 @@ y=[8, 8, 9, 72, 22, 51, 85, 4, 75, 48, 72, 1, 62, 37, 75, 42, 75, 47, 57, 95]
 
 plt.scatter(x, y)
 
-model = np.polyfit(x, y, 1)
+model = np.polyfit(x, y, 3)
 
 print("Modelo lineal", model)
 
