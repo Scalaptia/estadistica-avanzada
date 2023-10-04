@@ -41,4 +41,4 @@ print("Intercept:", regr.intercept_)
 # - 5 Estado de salud
 predictedProfit = regr.predict([[1, 4, 5, 5, 5]])
 print("\nPromedio General:", round(np.mean(y), 2), "de 100")
-print("Promedio predicho del estudiante:", round(predictedProfit[0], 2), "de 100")
+print("Promedio predicho del estudiante:", round(predictedProfit[0], 2), "de 100\n")
