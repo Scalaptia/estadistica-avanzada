@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 21 2023
+
+@author: Fernando Haro Calvo
+"""
+
 import pandas as pd
 from sklearn import linear_model
 
